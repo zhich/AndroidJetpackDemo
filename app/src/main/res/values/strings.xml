@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">AndroidJetpackDemo</string>
+    <string name="be_late">迟到</string>
+    <string name="leave_early">早退</string>
+    <string name="absenteeism">旷工</string>
+</resources>
