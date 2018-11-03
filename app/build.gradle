@@ -35,9 +35,13 @@ dependencies {
         exclude module: 'appcompat-v7'
         exclude module: 'support-annotations'
     }
-    // alternatively - just ViewModel
-    api "android.arch.lifecycle:viewmodel:$rootProject.ext.lifecycleVersion" // use -ktx for Kotlin
-    // alternatively - just LiveData
-    api "android.arch.lifecycle:livedata:$rootProject.ext.lifecycleVersion"
-    api "android.arch.lifecycle:extensions:$rootProject.ext.lifecycleVersion"
+
+    // ViewModel and LiveData
+    implementation "android.arch.lifecycle:extensions:$rootProject.ext.lifecycleVersion"
+    // alternatively - Lifecycles only (no ViewModel or LiveData).
+    // Support library depends on this lightweight import
+    implementation "android.arch.lifecycle:runtime:$rootProject.ext.lifecycleVersion"
+    annotationProcessor "android.arch.lifecycle:compiler:$rootProject.ext.lifecycleVersion" // use kapt for Kotlin
+    // alternately - if using Java8, use the following instead of compiler
+    implementation "android.arch.lifecycle:common-java8:$rootProject.ext.lifecycleVersion"
 }

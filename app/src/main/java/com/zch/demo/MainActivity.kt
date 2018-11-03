@@ -15,5 +15,9 @@ class MainActivity : AppCompatActivity() {
         btnViewModel.setOnClickListener {
             startActivity(Intent(this@MainActivity, ViewModelActivity::class.java))
         }
+
+        btnLifecycle.setOnClickListener {
+
+        }
     }
 }

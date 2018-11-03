@@ -9,6 +9,14 @@
         android:id="@+id/btnViewModel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ViewModel" />
+        android:text="ViewModel"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btnLifecycle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lifecycle"
+        android:textAllCaps="false" />
 
 </LinearLayout>
