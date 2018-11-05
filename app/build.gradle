@@ -28,20 +28,18 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
-    api("com.trello.rxlifecycle2:rxlifecycle-kotlin:$rootProject.ext.rxlifecycleVersion") {
+    api("com.trello.rxlifecycle2:rxlifecycle-kotlin:$rootProject.ext.rxlifecycle_version") {
         exclude module: 'support-annotations'
     }
-    api("com.trello.rxlifecycle2:rxlifecycle-android-lifecycle-kotlin:$rootProject.ext.rxlifecycleVersion") {
+    api("com.trello.rxlifecycle2:rxlifecycle-android-lifecycle-kotlin:$rootProject.ext.rxlifecycle_version") {
         exclude module: 'appcompat-v7'
         exclude module: 'support-annotations'
     }
 
     // ViewModel and LiveData
-    implementation "android.arch.lifecycle:extensions:$rootProject.ext.lifecycleVersion"
+    implementation "android.arch.lifecycle:extensions:$rootProject.ext.lifecycle_version"
     // alternatively - Lifecycles only (no ViewModel or LiveData).
     // Support library depends on this lightweight import
-    implementation "android.arch.lifecycle:runtime:$rootProject.ext.lifecycleVersion"
-    annotationProcessor "android.arch.lifecycle:compiler:$rootProject.ext.lifecycleVersion" // use kapt for Kotlin
-    // alternately - if using Java8, use the following instead of compiler
-    implementation "android.arch.lifecycle:common-java8:$rootProject.ext.lifecycleVersion"
+    implementation "android.arch.lifecycle:runtime:$rootProject.ext.lifecycle_version"
+    annotationProcessor "android.arch.lifecycle:compiler:$rootProject.ext.lifecycle_version" // use kapt for Kotlin
 }
