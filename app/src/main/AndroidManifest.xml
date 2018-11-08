@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".viewmodel.ViewModelActivity" />
-        <activity android:name=".lifecycle.MyLifeCycleActivity" />
+        <activity android:name=".lifecycle.MyLifecycleActivity" />
     </application>
 
 </manifest>

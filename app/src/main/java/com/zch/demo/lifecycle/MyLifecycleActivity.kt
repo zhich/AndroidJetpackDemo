@@ -8,7 +8,7 @@ import com.zch.demo.R
 /**
  * Created by zch on 2018/11/05.
  */
-class MyLifeCycleActivity : AppCompatActivity() {
+class MyLifecycleActivity : AppCompatActivity() {
 
     private lateinit var myPresenter: MyPresenter
 

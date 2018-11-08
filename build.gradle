@@ -3,6 +3,7 @@
 buildscript {
     ext.kotlin_version = '1.2.51'
     repositories {
+        maven { url 'http://maven.aliyun.com/nexus/content/repositories/central/' }
         google()
         jcenter()
     }
@@ -17,6 +18,7 @@ buildscript {
 
 allprojects {
     repositories {
+        maven { url 'http://maven.aliyun.com/nexus/content/repositories/central/' }
         google()
         jcenter()
     }
