@@ -4,6 +4,7 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.zch.demo.lifecycle.MyLifecycleActivity
+import com.zch.demo.livedata.LiveDataActivity
 import com.zch.demo.viewmodel.ViewModelActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -19,6 +20,10 @@ class MainActivity : AppCompatActivity() {
 
         btnLifecycle.setOnClickListener {
             startActivity(Intent(this@MainActivity, MyLifecycleActivity::class.java))
+        }
+
+        btnLiveData.setOnClickListener {
+            startActivity(Intent(this@MainActivity, LiveDataActivity::class.java))
         }
     }
 }
