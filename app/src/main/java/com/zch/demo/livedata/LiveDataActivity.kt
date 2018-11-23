@@ -19,12 +19,15 @@ class LiveDataActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_live_data)
 
+        // 创建并注册观察者
         myViewModel = ViewModelProviders.of(this).get(MyViewModel::class.java)
         myViewModel.getName().observe(this, Observer {
+            // LiveData 数据更新回调，it 代表被观察对象的数据，此处为 name
             Toast.makeText(baseContext, it, Toast.LENGTH_SHORT).show()
         })
 
         btnSetName.setOnClickListener {
+            // 使用 setValue 更新 LiveData 数据
             myViewModel.getName().value = "张三"
         }
     }

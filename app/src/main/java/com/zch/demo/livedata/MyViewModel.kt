@@ -8,6 +8,7 @@ import android.arch.lifecycle.ViewModel
  */
 class MyViewModel : ViewModel() {
 
+    // 创建一个 String 类型的 LiveData
     private lateinit var name: MutableLiveData<String>
 
     fun getName(): MutableLiveData<String> {
