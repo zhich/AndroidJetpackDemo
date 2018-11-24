@@ -4,6 +4,7 @@ import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.widget.Toast
 import com.zch.demo.R
 import kotlinx.android.synthetic.main.activity_live_data.*
@@ -19,6 +20,14 @@ class LiveDataActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_live_data)
 
+        withViewModleTest()
+        withExtendsLiveDataTest()
+    }
+
+    /**
+     * 结合 ViewModel 使用
+     */
+    private fun withViewModleTest() {
         // 创建并注册观察者
         myViewModel = ViewModelProviders.of(this).get(MyViewModel::class.java)
         myViewModel.getName().observe(this, Observer {
@@ -30,5 +39,14 @@ class LiveDataActivity : AppCompatActivity() {
             // 使用 setValue 更新 LiveData 数据
             myViewModel.getName().value = "张三"
         }
+    }
+
+    /**
+     * 直接继承 LiveData 类
+     */
+    private fun withExtendsLiveDataTest() {
+        WifiLiveData.getInstance(this).observe(this, Observer {
+            Log.e("LiveDataActivity", it.toString()) // 打印 Wifi 信号强度
+        })
     }
 }
