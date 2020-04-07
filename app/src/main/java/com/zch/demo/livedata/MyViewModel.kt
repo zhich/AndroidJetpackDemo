@@ -1,7 +1,7 @@
 package com.zch.demo.livedata
 
-import android.arch.lifecycle.MutableLiveData
-import android.arch.lifecycle.ViewModel
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 
 /**
  * Created by zch on 2018/11/22.

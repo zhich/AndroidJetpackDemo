@@ -1,11 +1,11 @@
 package com.zch.demo.livedata
 
-import android.arch.lifecycle.LiveData
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.net.wifi.WifiManager
+import androidx.lifecycle.LiveData
 import java.lang.ref.WeakReference
 
 /**

@@ -1,8 +1,8 @@
 package com.zch.demo
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.zch.demo.lifecycle.MyLifecycleActivity
 import com.zch.demo.livedata.LiveDataActivity
 import com.zch.demo.viewmodel.ViewModelActivity

@@ -1,7 +1,7 @@
 package com.zch.demo.viewmodel
 
 import android.app.Application
-import android.arch.lifecycle.AndroidViewModel
+import androidx.lifecycle.AndroidViewModel
 import com.zch.demo.R
 
 /**

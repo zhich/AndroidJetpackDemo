@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 28
@@ -22,24 +23,18 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:28.0.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation "androidx.appcompat:appcompat:$rootProject.appCompatVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintLayoutVersion"
 
-    api("com.trello.rxlifecycle2:rxlifecycle-kotlin:$rootProject.ext.rxlifecycle_version") {
-        exclude module: 'support-annotations'
-    }
-    api("com.trello.rxlifecycle2:rxlifecycle-android-lifecycle-kotlin:$rootProject.ext.rxlifecycle_version") {
-        exclude module: 'appcompat-v7'
-        exclude module: 'support-annotations'
-    }
-
-    // ViewModel and LiveData
-    implementation "android.arch.lifecycle:extensions:$rootProject.ext.lifecycle_version"
-    // alternatively - Lifecycles only (no ViewModel or LiveData).
-    // Support library depends on this lightweight import
-    implementation "android.arch.lifecycle:runtime:$rootProject.ext.lifecycle_version"
-    annotationProcessor "android.arch.lifecycle:compiler:$rootProject.ext.lifecycle_version" // use kapt for Kotlin
+    implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.ext.lifecycle_version"
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.ext.lifecycle_version"
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$rootProject.ext.lifecycle_version"
+    // Lifecycles only (without ViewModel or LiveData)
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$rootProject.ext.lifecycle_version"
+    // Annotation processor
+    kapt "androidx.lifecycle:lifecycle-compiler:$rootProject.ext.lifecycle_version"
+    // WorkManager
+    implementation "androidx.work:work-runtime:$rootProject.ext.work_version"
 }
