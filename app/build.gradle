@@ -19,6 +19,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -35,6 +43,6 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$rootProject.ext.lifecycle_version"
     // Annotation processor
     kapt "androidx.lifecycle:lifecycle-compiler:$rootProject.ext.lifecycle_version"
-    // WorkManager
-    implementation "androidx.work:work-runtime:$rootProject.ext.work_version"
+    // WorkManager（Kotlin + coroutines）
+    implementation "androidx.work:work-runtime-ktx:$rootProject.ext.work_version"
 }

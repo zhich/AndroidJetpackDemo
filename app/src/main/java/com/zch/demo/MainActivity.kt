@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.zch.demo.lifecycle.MyLifecycleActivity
 import com.zch.demo.livedata.LiveDataActivity
 import com.zch.demo.viewmodel.ViewModelActivity
+import com.zch.demo.workmanager.WorkManagerActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -14,16 +15,20 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        btnViewModel.setOnClickListener {
+        btnViewModel?.setOnClickListener {
             startActivity(Intent(this@MainActivity, ViewModelActivity::class.java))
         }
 
-        btnLifecycle.setOnClickListener {
+        btnLifecycle?.setOnClickListener {
             startActivity(Intent(this@MainActivity, MyLifecycleActivity::class.java))
         }
 
-        btnLiveData.setOnClickListener {
+        btnLiveData?.setOnClickListener {
             startActivity(Intent(this@MainActivity, LiveDataActivity::class.java))
+        }
+
+        btnWorkManager?.setOnClickListener {
+            startActivity(Intent(this@MainActivity, WorkManagerActivity::class.java))
         }
     }
 }

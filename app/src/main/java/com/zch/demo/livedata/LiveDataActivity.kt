@@ -1,12 +1,12 @@
 package com.zch.demo.livedata
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.zch.demo.R
+import com.zch.demo.utils.LogUtil
 import kotlinx.android.synthetic.main.activity_live_data.*
 
 /**
@@ -46,7 +46,7 @@ class LiveDataActivity : AppCompatActivity() {
      */
     private fun withExtendsLiveDataTest() {
         WifiLiveData.getInstance(this).observe(this, Observer {
-            Log.e("LiveDataActivity", it.toString()) // 打印 Wifi 信号强度
+            LogUtil.d(it.toString()) // 打印 Wifi 信号强度
         })
     }
 }

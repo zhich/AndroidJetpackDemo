@@ -1,8 +1,8 @@
 package com.zch.demo.lifecycle
 
-import android.util.Log
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
+import com.zch.demo.utils.LogUtil
 
 /**
  * Created by zch on 2018/11/03.
@@ -10,14 +10,14 @@ import androidx.lifecycle.LifecycleOwner
 class MyPresenter : IPresenter {
 
     override fun onCreate(owner: LifecycleOwner) {
-        Log.e(javaClass.simpleName, "onCreate")
+        LogUtil.e(javaClass.simpleName, "onCreate")
     }
 
     override fun onDestroy(owner: LifecycleOwner) {
-        Log.e(javaClass.simpleName, "onDestroy")
+        LogUtil.e(javaClass.simpleName, "onDestroy")
     }
 
     override fun onLifecycleChanged(owner: LifecycleOwner, event: Lifecycle.Event) {
-        Log.e(javaClass.simpleName, "onLifecycleChanged")
+        LogUtil.e(javaClass.simpleName, "onLifecycleChanged")
     }
 }

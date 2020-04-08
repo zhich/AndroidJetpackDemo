@@ -1,9 +1,9 @@
 package com.zch.demo.lifecycle
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.zch.demo.R
+import com.zch.demo.utils.LogUtil
 
 /**
  * Created by zch on 2018/11/05.
@@ -16,14 +16,14 @@ class MyLifecycleActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_lifecycle)
 
-        Log.e(javaClass.simpleName, "onCreate")
+        LogUtil.d(javaClass.simpleName, "onCreate")
 
         myPresenter = MyPresenter()
         lifecycle.addObserver(myPresenter) // 添加 LifecycleObserver
     }
 
     override fun onDestroy() {
-        Log.e(javaClass.simpleName, "onDestroy")
+        LogUtil.d(javaClass.simpleName, "onDestroy")
         super.onDestroy()
     }
 }

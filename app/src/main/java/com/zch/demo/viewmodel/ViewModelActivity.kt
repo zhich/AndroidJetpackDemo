@@ -1,18 +1,16 @@
 package com.zch.demo.viewmodel
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.zch.demo.R
+import com.zch.demo.utils.LogUtil
 
 /**
  * Created by zch on 2018/10/26.
  */
 class ViewModelActivity : AppCompatActivity() {
-
-    private val TAG = "ViewModelActivity"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,14 +27,14 @@ class ViewModelActivity : AppCompatActivity() {
 
         // 这里的 this 需要用实现了 LifecycleOwner 的类的 this . 如 AppCompatActivity、FragmentActivity
         userViewModel.getUsers().observe(this, Observer {
-            Log.e(TAG, it.toString())
+            LogUtil.d(it.toString())
             // 打印结果：[User(id=1, name=AA), User(id=2, name=BB)]
         })
     }
 
     private fun testAndroidViewModel() {
         val myAndroidViewModel = ViewModelProviders.of(this).get(MyAndroidViewModel::class.java)
-        Log.e(TAG, myAndroidViewModel.getStatus(2))
+        LogUtil.d(myAndroidViewModel.getStatus(2))
         // 打印结果：早退
     }
 }
