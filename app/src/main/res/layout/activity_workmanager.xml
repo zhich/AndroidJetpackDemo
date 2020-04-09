@@ -32,4 +32,25 @@
             android:text="ProgressWorker"
             android:textAllCaps="false" />
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnTaskChainWorker"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TaskChainWorker"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnTaskChainWorker2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TaskChainWorker2"
+            android:textAllCaps="false" />
+    </LinearLayout>
 </LinearLayout>

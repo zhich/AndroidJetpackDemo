@@ -7,13 +7,12 @@ import com.zch.demo.utils.LogUtil
 import kotlinx.coroutines.delay
 
 /**
- * Created by zch on 2020-04-08.
+ * Created by zch on 2020-04-09.
  */
-class SleepWorker(context: Context, workerParams: WorkerParameters) : CoroutineWorker(context, workerParams) {
+class MyWorker2(context: Context, workerParams: WorkerParameters) : CoroutineWorker(context, workerParams) {
 
     override suspend fun doWork(): Result {
-        delay(2000)
-        LogUtil.d("SleepWorker")
+        LogUtil.d("MyWorker2")
         return Result.success()
     }
 }
